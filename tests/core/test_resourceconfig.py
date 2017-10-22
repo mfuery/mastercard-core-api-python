@@ -24,6 +24,7 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
+from __future__ import print_function
 
 import unittest
 
@@ -55,17 +56,17 @@ class ResourceConfig(object):
     @staticmethod    
     def getInstance():
         if ResourceConfig.__initialized == False:
-            print "initilizing.... true"
+            print("initilizing.... true")
             ResourceConfig.__initialized = True
             
-            print "creating a new instance"
+            print("creating a new instance")
             tmpInstance = ResourceConfig.__new__(ResourceConfig)
             
-            print "regestring a new instance"
+            print("regestring a new instance")
             Config.registerResourceConfig(tmpInstance)
             tmpInstance.setEnvironment(Config.getEnvironment())
             
-            print "saving instance"
+            print("saving instance")
             ResourceConfig.__instance = tmpInstance
 
         return ResourceConfig.__instance
