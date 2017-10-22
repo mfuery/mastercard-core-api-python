@@ -67,7 +67,8 @@ class OAuthAuthentication(Authentication):
         oAuthParameters.setOAuthSignatureMethod("RSA-SHA256")
         oAuthParameters.setOAuthVersion("1.0")
         if body:
-            encodedHash = util.base64Encode(util.sha256Encode(body))
+            encodedHash = util.base64Encode(util.sha256Encode(body)).decode()
+            print('hash', encodedHash)
             oAuthParameters.setOAuthBodyHash(encodedHash)
 
         return oAuthParameters
