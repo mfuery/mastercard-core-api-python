@@ -93,7 +93,7 @@ class OAuthAuthentication(Authentication):
         oAuthBaseParametersDict = oAuthBaseParameters.getBaseParametersDict()
 
         #Generate the header value for OAuth Header
-        oauth_key = OAuthParameters.OAUTH_KEY+" "+",".join([ util.uriRfc3986Encode(str(key))+"=\""+util.uriRfc3986Encode(str(value))+"\"" for key,value in oAuthBaseParametersDict.items() ])
+        oauth_key = OAuthParameters.OAUTH_KEY + " " + ",".join([str(key) + "=\"" + str(value) + "\"" for key, value in oAuthBaseParametersDict.items()])
         return oauth_key
 
 
