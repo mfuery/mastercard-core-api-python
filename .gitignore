@@ -90,3 +90,5 @@ ENV/
 .ropeproject
 #mac
 .DS_store
+# JetBrains IDE
+.idea

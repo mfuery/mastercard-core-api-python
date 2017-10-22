@@ -1,3 +1,4 @@
+from __future__ import print_function
 import unittest
 from mastercardapicore import RequestMap
 from mastercardapicore import Config
@@ -27,18 +28,18 @@ class BaseTest(unittest.TestCase):
             else:
                     pos = overrideValue.find('.')
                     name = overrideValue[:pos]
-                    #print "Example Name: %s" % name
+                    #print("Example Name: %s" % name)
                     key = overrideValue[pos+1:]
-                    #print "Key Name: %s" % key
+                    #print("Key Name: %s" % key)
 
                     if name in BaseTest.responses:
                             response = BaseTest.responses[name]
                             if response.containsKey(key) == True:
                                     return str(response.get(key))
                             else:
-                                    print "Key:'%s' is not found in the response" % key
+                                    print("Key:'%s' is not found in the response" % key)
                     else:
-                            print "Example:'%s' is not found in the response" % name
+                            print("Example:'%s' is not found in the response" % name)
 
                     return None
 

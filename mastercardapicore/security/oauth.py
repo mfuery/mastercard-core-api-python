@@ -25,10 +25,10 @@
 # SUCH DAMAGE.
 #
 from mastercardapicore.core.config import Config
-from authentication import Authentication
+from .authentication import Authentication
 from OpenSSL import crypto
 
-import util as SecurityUtil
+from .util import SecurityUtil
 import mastercardapicore.core.util as util
 import collections
 
