@@ -111,7 +111,7 @@ def base64Encode(text):
     Base64 encodes the given input
     """
     #text = text.encode('ascii')
-    return base64.b64encode(text)
+    return base64.urlsafe_b64decode(text)
 
 def subMap(inputMap,keyList):
     """

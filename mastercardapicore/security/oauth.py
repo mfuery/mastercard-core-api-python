@@ -24,6 +24,7 @@
 # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
+from __future__ import absolute_import
 from mastercardapicore.core.config import Config
 from .authentication import Authentication
 from OpenSSL import crypto
@@ -83,7 +84,7 @@ class OAuthAuthentication(Authentication):
         #Get the base string
         baseString = self.getBaseString(url, method, params,oAuthBaseParameters.getBaseParametersDict())
         #Sign the base string using the private key
-        signature = self.signMessage(baseString)
+        signature = self.signMessage(baseString).decode()
 
         #Set the signature in the Base parameters
         oAuthBaseParameters.setOAuthSignature(signature)
